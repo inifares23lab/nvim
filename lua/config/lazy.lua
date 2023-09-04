@@ -7,32 +7,29 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-vim.g.mapleader = " "
-
 require("lazy").setup({
     spec = {
         -- add LazyVim and import its plugins
-        -- {
-        --     "LazyVim/LazyVim",
-        --     import = "lazyvim.plugins"
-        -- },
-        -- -- import any extras modules here
-        -- { import = "lazyvim.plugins.extras.dap.core" },
-        -- { import = "lazyvim.plugins.extras.test.core" },
-        -- { import = "lazyvim.plugins.extras.lang.json" },
-        -- { import = "lazyvim.plugins.extras.lang.go" },
-        -- { import = "lazyvim.plugins.extras.lang.python" },
-        -- { import = "lazyvim.plugins.extras.lang.docker" },
-        -- { import = "lazyvim.plugins.extras.lang.ruby" },
-        -- { import = "lazyvim.plugins.extras.lang.rust" },
-        -- { import = "lazyvim.plugins.extras.lang.java" },
-        -- { import = "lazyvim.plugins.extras.lang.yaml" },
-        -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+        {
+            "LazyVim/LazyVim",
+            import = "lazyvim.plugins"
+        },
+        -- import any extras modules here
+        { import = "lazyvim.plugins.extras.dap.core" },
+        { import = "lazyvim.plugins.extras.test.core" },
+        { import = "lazyvim.plugins.extras.lang.json" },
+        { import = "lazyvim.plugins.extras.lang.go" },
+        { import = "lazyvim.plugins.extras.lang.python" },
+        { import = "lazyvim.plugins.extras.lang.docker" },
+        { import = "lazyvim.plugins.extras.lang.ruby" },
+        { import = "lazyvim.plugins.extras.lang.rust" },
+        { import = "lazyvim.plugins.extras.lang.java" },
+        { import = "lazyvim.plugins.extras.lang.yaml" },
+        { import = "lazyvim.plugins.extras.ui.mini-animate" },
         -- import/override with your plugins
-        { import = "plugins.mix" },
         { import = "plugins.mini" },
-        { import = "plugins.ray-x" },
-        { import = "plugins.folke" },
+        { import = "plugins" },
+        { import = "config.lang" },
     },
     defaults = {
         -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -67,38 +64,3 @@ require("lazy").setup({
         border = "double",
     },
 })
-
-
- local require_mod = function(config_mod_path, mod)
-     local ok = pcall(require, config_mod_path .. "." .. mod)
-     if not ok then
-         vim.notify(
-             "module " .. mod .. " unavailable in " .. config_mod_path,
-             vim.log.levels.WARN
-         )
-     end
- end
-
- local langs = {
-     "ansible",
-     "docker",
-     "golang",
-     "java",
-     "json",
-     "k8s",
-     "python",
-     "pulumi",
-     "ruby",
-     "rust",
-     "sh",
-     "terraform",
-     "toml",
-     "yaml",
- }
- for _, l in ipairs(langs) do
-     require_mod("config.lang", l)
- end
-
- require_mod("config", "autocmd")
- require_mod("config", "keymaps")
- require_mod("config", "options")

@@ -71,6 +71,8 @@ vim.keymap.set("n", "<leader>xpS", "<cmd>Telescope lsp_dynamic_workspace_symbols
 vim.keymap.set("n", "<leader>cg", "<Nop>", { desc = "+golang" })
 vim.keymap.set("n", "<leader>cp", "<Nop>", { desc = "+python" })
 
+
+vim.keymap.set("n", "<leader>fs", "<CMD>Telescope file_browser<CR>", { desc = "File Browser" })
 -- vim.keymap.set({ "n", "i", "v" }, "<S-ScrollWheelUp>", "<ScrollWheelLeft>")
 -- vim.keymap.set({ "n", "i", "v" }, "<S-2-ScrollWheelUp>", "<2-ScrollWheelLeft>")
 -- vim.keymap.set({ "n", "i", "v" }, "<S-3-ScrollWheelUp>", "<3-ScrollWheelLeft>")
