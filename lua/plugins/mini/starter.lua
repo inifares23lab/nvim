@@ -35,39 +35,28 @@ return {
                         section = "  Sessions",
                     },
                     {
-                        name = "Bookmarks list",
-                        action = "Telescope bookmarks list",
-                        section = "B  Bookmarks",
+                        name = "Bookmarks",
+                        section = "  󰈞 Telescope",
                     },
                     {
-                        name = "Recent Files",
+                        name = "Recent files",
                         action = "Telescope oldfiles",
-                        section = "  Recent",
+                        section = "  󰈞 Telescope",
                     },
                     {
-                        name = "File finder",
+                        name = "Find files",
                         action = "Telescope find_files",
-                        section = "󰈞  Find files",
-                    },
-                    {
-                        name = "Live grep args",
-                        action = "Telescope live_grep_args",
-                        section = "  Find text",
-                    },
-                    {
-                        name = "Ast grep",
-                        action = "Telescope ast_grep",
-                        section = "  Find text",
+                        section = "  󰈞 Telescope",
                     },
                     {
                         name = "Help tags finder",
                         action = "Telescope help_tags",
-                        section = "H  Help Tags",
+                        section = "  󰈞 Telescope",
                     },
                     {
                         name = "Command history",
                         action = "Telescope command_history",
-                        section = "C  Command history",
+                        section = "  󰈞 Telescope",
                     },
                     {
                         name = "To do file",
