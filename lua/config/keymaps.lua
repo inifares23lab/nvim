@@ -71,12 +71,9 @@ vim.keymap.set("n", "<leader>xpS", "<cmd>Telescope lsp_dynamic_workspace_symbols
 vim.keymap.set("n", "<leader>cg", "<Nop>", { desc = "+golang" })
 vim.keymap.set("n", "<leader>cp", "<Nop>", { desc = "+python" })
 
--- vim.keymap.set({ "n", "i", "v" }, "<S-ScrollWheelUp>", "<ScrollWheelLeft>")
--- vim.keymap.set({ "n", "i", "v" }, "<S-2-ScrollWheelUp>", "<2-ScrollWheelLeft>")
--- vim.keymap.set({ "n", "i", "v" }, "<S-3-ScrollWheelUp>", "<3-ScrollWheelLeft>")
--- vim.keymap.set({ "n", "i", "v" }, "<S-4-ScrollWheelUp>", "<4-ScrollWheelLeft>")
---
--- vim.keymap.set({ "n", "i", "v" }, "<S-ScrollWheelDown>", "<ScrollWheelRight>")
--- vim.keymap.set({ "n", "i", "v" }, "<S-2-ScrollWheelDown>", "<2-ScrollWheelRight>")
--- vim.keymap.set({ "n", "i", "v" }, "<S-3-ScrollWheelDown>", "<3-ScrollWheelRight>")
--- vim.keymap.set({ "n", "i", "v" }, "<S-4-ScrollWheelDown>", "<4-ScrollWheelRight>")
+vim.keymap.set("n", "<leader>::",
+    function()
+        vim.opt.cmdheight = 1 - vim.opt.cmdheight._value
+    end,
+    { desc = "Toggle cmdheight" }
+)
