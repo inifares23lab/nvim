@@ -28,7 +28,7 @@ return {
                 -- The attach code will apply to all LSP clients
 
                 ts_fold = false,         -- modified version of treesitter folding
-                default_mapping = false, -- set to false if you will remap every key or if you using old version of nvim-
+                default_mapping = true, -- set to false if you will remap every key or if you using old version of nvim-
                 -- keymaps = { { key = "gK", func = vim.lsp.declaration, desc = 'declaration' } }, -- a list of key maps
                 -- this kepmap gK will override "gD" mapping function declaration()  in default kepmap
                 -- please check mapping.lua for all keymaps

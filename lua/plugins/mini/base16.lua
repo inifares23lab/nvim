@@ -1,9 +1,10 @@
+if true then return {} end
 return {
     {
         'echasnovski/mini.base16',
         version = false,
         config = function()
-            require("mini-base16").setup({palette = nil})
+            require("mini.base16").setup({palette = nil})
         end
     },
 }

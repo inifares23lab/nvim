@@ -60,7 +60,7 @@ vim.keymap.set("n", "<leader>xpq", "<cmd>Telescope quickfix<CR>",
     { desc = "quickfix" })
 vim.keymap.set("n", "<leader>xpw", "<cmd>Telescope diagnostics<CR>",
     { desc = "workspace diagnostics" })
-vim.keymap.set("n", "<leader>xpb", "<cmd>Telescope diagnostics bufnr=0",
+vim.keymap.set("n", "<leader>xpb", "<cmd>Telescope diagnostics bufnr=0<CR>",
     { desc = "buffer diagnostics" })
 vim.keymap.set("n", "<leader>xps", "<cmd>Telescope lsp_document_symbols<cr>",
     { desc = "document symbols" })
