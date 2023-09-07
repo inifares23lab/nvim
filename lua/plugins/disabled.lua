@@ -1,0 +1,16 @@
+return {
+    { "jose-elias-alvarez/null-ls.nvim",  enabled = false },
+    { "linux-cultist/venv-selector.nvim", enabled = false },
+    { "folke/which-key.nvim",             enabled = false },
+    { "folke/persistence.nvim",           enabled = false },
+    { "goolord/alpha-nvim",               enabled = false },
+    { "catppuccin/nvim",                  enabled = false },
+    { "folke/tokyonight.nvim",            enabled = false },
+    -- { "echasnovski/mini.indentscope",     enabled = false },
+    -- { "hrsh7th/nvim-cmp",                 enabled = false },
+    -- { "hrsh7th/cmp-nvim-lsp",             enabled = false },
+    -- { "hrsh7th/cmp-buffer",               enabled = false },
+    -- { "hrsh7th/cmp-path",                 enabled = false },
+    -- { "saadparwaiz1/cmp_luasnip",         enabled = false },
+    -- { "L3MON4D3/LuaSnip",                 enabled = false },
+}
