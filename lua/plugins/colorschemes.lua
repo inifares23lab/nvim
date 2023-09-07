@@ -1,11 +1,14 @@
 return {
     {
+        "RRethy/nvim-base16",
+    },
+    {
         "EdenEast/nightfox.nvim",
     },
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "dawnfox"
+            colorscheme = "base16-nord"
         }
     },
 }

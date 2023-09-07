@@ -70,24 +70,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
                 vim.diagnostic.open_float(nil, opts)
             end,
         })
-
-        -- vim.api.nvim_create_autocmd({ "CursorHoldI" }, {
-        --     group = vim.api.nvim_create_augroup("_auto_diag", { clear = false }),
-        --     buffer = buffer,
-        --     callback = function()
-        --         if not lspDiagnosticsShowInsert then
-        --             return
-        --         end
-        --         local opts = {
-        --             focusable = lspDiagnosticsVirtualTextFocusable,
-        --             close_events = { "BufLeave", "CursorMoved", "CursorMovedI", "InsertLeave", "FocusLost" },
-        --             border = "rounded",
-        --             source = "always",
-        --             prefix = " ",
-        --             scope = "cursor",
-        --         }
-        --         vim.diagnostic.open_float(nil, opts)
-        --     end,
-        -- })
     end,
 })

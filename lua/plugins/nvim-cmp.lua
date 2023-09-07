@@ -1,4 +1,4 @@
-if true then return {} end
+--if true then return {} end
 return {
     {
         "L3MON4D3/LuaSnip",
@@ -10,6 +10,7 @@ return {
         "hrsh7th/nvim-cmp",
         dependencies = {
             "hrsh7th/cmp-emoji",
+            "hrsh7th/cmp-nvim-lsp-signature-help",
         },
         ---@param opts cmp.ConfigSchema
         opts = function(_, opts)
@@ -30,11 +31,12 @@ return {
                     buffer = '[B]',
                     codeium = '[C]',
                     crates = '[R]',
+                    lsp_signature_help = '[H]',
                 })[entry.source.name]
                 return vim_item
             end
 
-            opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "codeium" } }))
+            opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "lsp_signature_help" } }))
 
             local showSources = function()
                 local str = ""
@@ -47,9 +49,21 @@ return {
                 vim.notify(str)
             end
 
-            vim.keymap.set("n", "<leader>cc", showSources, { desc = "Current sources" })
+            vim.keymap.set("n", "<leader>cc", showSources, { desc = "+Current sources" })
+            vim.keymap.set("n", "<leader>cc<CR>", "<Nop>", { desc = "Current sources" })
 
+
+            local priority = {
+                nvim_lsp = 100,
+                luasnip = 70,
+                path = 70,
+                buffer = 70,
+                codeium = 80,
+                crates = 80,
+                lsp_signature_help = 70,
+            }
             for i, v in ipairs(opts.sources) do
+                opts.sources[i].priority = priority[v.name]
                 vim.keymap.set("n", "<leader>cc" .. i, function()
                     if opts.sources[i].max_item_count == 0 then
                         opts.sources[i].max_item_count = nil

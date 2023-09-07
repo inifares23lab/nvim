@@ -20,4 +20,4 @@ vim.opt_global.swf = false
 
 vim.opt_global.showtabline = 2
 
--- vim.opt_global.cmdheight = 0
+vim.opt_global.title = true
